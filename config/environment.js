@@ -41,11 +41,11 @@ module.exports = function(environment) {
   }
 
 
-  ENV.remote_couch = 'http://localhost:5984/bloggr';
-  ENV.local_couch = 'bloggr';
+  ENV.remote_couch = 'http://localhost:5984/paris';
+  ENV.local_couch = 'paris';
   if (environment === 'production') {
-    ENV.baseURL = '/';
-    ENV.remote_couch = 'https://martinic.cloudant.com/bloggr';
+    ENV.baseURL = '/paris/_design/myapp/_rewrite/';
+    ENV.remote_couch = 'http://localhost:5984/paris';
   }
   ENV.contentSecurityPolicy = {
     'connect-src': "'self' " + ENV.remote_couch.substring(0, ENV.remote_couch.indexOf('/', 9))

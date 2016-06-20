@@ -8,17 +8,17 @@ export default Ember.Component.extend({
 
   totalPagesBinding: "pagedContent.totalPages",
 
-  postsSorting: ['date:desc'],
+  postsSorting: ['sort'],
   arrangedContent: Ember.computed.sort('posts', 'postsSorting'),
 
   filteredContent: function() {
     return computedFilterByQuery(
       this.get('arrangedContent'),
-      ['title', 'body', 'author', 'excerpt'],
+      ['title', 'body'],
       this.get('query'),
       { conjunction: 'and', sort: false}
     );
-  }.property('arrangedContent.@each.title', 'arrangedContent.@each.author', 'query'),
+  }.property('arrangedContent.@each.title', 'arrangedContent.@each.body', 'query'),
 
   actions: {
     createPost: function() {
