@@ -41,11 +41,11 @@ module.exports = function(environment) {
   }
 
 
-  ENV.remote_couch = 'http://localhost:5984/paris';
-  ENV.local_couch = 'paris';
+  ENV.remote_couch = 'http://localhost:5984/ember12';
+  ENV.local_couch = 'ember12';
   if (environment === 'production') {
-    ENV.baseURL = '/paris/_design/myapp/_rewrite/';
-    ENV.remote_couch = 'http://localhost:5984/paris';
+    ENV.baseURL = '/ember12/_design/myapp/_rewrite/';
+    ENV.remote_couch = 'http://localhost:5984/emner12';
   }
   ENV.contentSecurityPolicy = {
     'connect-src': "'self' " + ENV.remote_couch.substring(0, ENV.remote_couch.indexOf('/', 9))
